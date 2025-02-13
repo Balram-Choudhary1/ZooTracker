@@ -10,4 +10,4 @@ export const zooSlice = createSlice({
      }
 })
 
-export default zooSlice.reducer
+export default zooSlice.reducer;

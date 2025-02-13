@@ -16,7 +16,7 @@ const Main = () => {
     useEffect(() => {
         if(loaded && !hasNavigated) {
               const timeoutId   =   setTimeout(() => {
-                resetAndNavigate("/home")
+                resetAndNavigate("home")
             }, 2000);
 
             return () => clearTimeout(timeoutId)
@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Main
+export default Main;
