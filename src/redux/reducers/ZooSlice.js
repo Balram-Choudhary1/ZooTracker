@@ -23,7 +23,7 @@ export const zooSlice = createSlice({
             const {id,title,desc,breed,image} = action.payload
             const  index = state.data?.findIndex((i) => i.id === id);
             if(index!==-1){
-                state.data[index] =  {...state.data[index], title, desc, breed };
+                state.data[index] =  {...state.data[index], title, desc, breed ,image};
             }
         }
      }
