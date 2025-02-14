@@ -2,8 +2,21 @@ import { View, Text, StyleSheet,Image } from 'react-native'
 import React from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useDispatch } from 'react-redux';
+import { deleteZoo } from '../redux/reducers/ZooSlice';
 
 const Zooitem = ({item}) => {
+        // update model
+      
+
+
+
+
+      const dispatch = useDispatch()
+      const delateHandler = async()=>{
+        dispatch(deleteZoo({id:item?.id}))
+      }
+
   return (
     <View style={styles.container}>
         <View>
@@ -23,8 +36,8 @@ const Zooitem = ({item}) => {
       </View>
 
       <View style={styles.iconContainer}>
-         <FontAwesome name="pencil-square-o" size={24} color="black" />
-         <MaterialIcons name="delete-sweep" size={30} color="black" />
+         <FontAwesome name="pencil-square-o" size={24} color="black" onPress={()=>{}} />
+         <MaterialIcons name="delete-sweep" size={30} color="black"  onPress={delateHandler} />
       </View>
     </View>
   )
@@ -46,7 +59,7 @@ const styles = StyleSheet.create({
           padding:10
      },
      title:{
-        fontSize:16,
+        fontSize:15,
         fontWeight:'500',
         color:'#222'
      },
@@ -56,13 +69,15 @@ const styles = StyleSheet.create({
         textAlign:'left'
      },
      breed:{
-
+        fontSize:14,
+        color:'#221',
      },
      infoContainer:{
        width:'30%'
      },
      iconContainer:{
-        width:'20%'
+        width:'20%',
+        gap:16
      }
 })
 export default Zooitem

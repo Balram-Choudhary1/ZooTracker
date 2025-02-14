@@ -36,7 +36,7 @@ const  data = useSelector(state => state.zoo.data)
          renderItem={renderTodoItem}
          ListEmptyComponent={<View style={styles.emptycontainer}>
              <Image source={require('../assets/image/proud.png')} style={styles.logo}/>
-             <Text style={styles.emptytext}>Click on plus button to add Animal</Text>
+             <Text style={styles.emptytext}>Click on plus button to add Animals</Text>
          </View>}
          initialNumToRender={10}
          windowSize={10}
