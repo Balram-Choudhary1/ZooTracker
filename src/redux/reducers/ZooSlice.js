@@ -3,18 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 export const zooSlice = createSlice({
      name:'zoo',
      initialState:{
-        data:[]
+        data:[],
      },
      reducers:{
         addZoo:(state,action)=>{
          const zooData = {
-              id:state.data?.length+1,
-              title: action.title,
-              desc:action.desc,
-              breed:action.breed,
-              image:action.image
+              id: state.data?.length+1,
+              title: action.payload.title,
+              desc: action.payload.desc,
+              breed: action.payload.breed,
+              image: action.payload.image
          }
-           state.data=[zooData,...state?.data]
+           state.data=[zooData, ...state?.data];
         }
      }
 })
