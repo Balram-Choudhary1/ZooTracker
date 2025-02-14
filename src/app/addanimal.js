@@ -4,6 +4,8 @@ import CustomHeader from '../components/CustomHeader'
 import CustomButton from '../components/CustomButton';
 import { useDispatch } from 'react-redux';
 import ImagePickerComponent from '../components/ImagePickerComponent';
+import { addZoo } from '../redux/reducers/ZooSlice';
+import { router } from 'expo-router';
 
 
 const Addanimal = () => {
@@ -24,6 +26,9 @@ const Addanimal = () => {
           Alert.alert('Please select an image');
           return;
         }
+
+        dispatch(addZoo({title:value,desc:description,breed:breed,image:image}))
+      router.back();
   }
 
   return (
